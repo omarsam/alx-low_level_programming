@@ -1,1 +1,1 @@
-This is first C trial
+This is the hello world leason
