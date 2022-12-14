@@ -3,24 +3,24 @@
 /**
  * print_last_digit - prints the last digit of a number
  *
- * @n: number to be tested
+ * @nld: number to be tested
  *
  * Return: 0 Always
  *
  * Created by Omar El-Shazly
  */
 
-int print_last_digit(int n)
+int print_last_digit(int nld)
 {
-	int c;
+	int pld;
 
-	c = (n % 10);
+	pld = (nld % 10);
 
-	if (c < 0)
+	if (pld < 0)
 	{
-		c = (-1 * n);
+		pld = (-1 * pld);
 	}
 
-	_putchar(c + '0');
-	return (c);
+	_putchar(pld + '0');
+	return (pld);
 }
