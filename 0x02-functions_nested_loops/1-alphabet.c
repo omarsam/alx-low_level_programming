@@ -3,7 +3,6 @@
 /**
  * print_alphabet - prints the alphabet, in lowercase, followed by a new line
  * created by Omar El-Shazly
- * Return: 0 When success
  */
 
 void print_alphabet(void)
