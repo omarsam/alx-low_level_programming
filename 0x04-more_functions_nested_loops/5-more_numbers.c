@@ -9,18 +9,18 @@
 
 void more_numbers(void)
 {
-	int number, tens, units, row;
+	int n, t, u, r;
 
-	for (row = 1; row <= 10; row++)
+	for (r = 1; r <= 10; r++)
 	{
-		for (number = 0; number <= 14; number++)
+		for (n = 0; n <= 14; n++)
 		{
-			tens = number / 10;
-			units = number % 10;
-			if (number > 9)
-				_putchar(tens + '0');
+			t = n / 10;
+			u = n % 10;
+			if (n > 9)
+				_putchar(t + '0');
 
-			_putchar(units + '0');
+			_putchar(u + '0');
 		}
 		_putchar('\n');
 	}
