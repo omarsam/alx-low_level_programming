@@ -2,23 +2,24 @@
 
 /**
  * _memcpy - function that copies memory area
- * @s: array
- * @c: char
+ * @dest: copied
+ * @src: original
+ * @n: limit
  *
- * Return: char
+ * Return: pointer
+ *
  */
 
-char *_strchr(char *s, char c)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int i = 0;
+	char *b = src;
+	char *a = dest;
 
-	while (s[i] != 0)
+	while (n != 0)
 	{
-		if (s[i] == c)
-			return (&s[i]);
-		i++;
+	*a++ = *b++;
+	n--;
 	}
-	if (s[i] == c)
-		return (&s[i]);
-	return ('\0');
+
+	return (dest);
 }
