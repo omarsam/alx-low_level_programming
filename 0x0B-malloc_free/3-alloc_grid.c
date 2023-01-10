@@ -1,42 +1,35 @@
-#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
-
+#include "main.h"
 /**
- * alloc_grip - nested loop to make grip
- * @width: width input
- * @height: height input
- * Return: pointer to 2 dim array
+ * alloc_grid - creates 2D array of ints
+ * @width: width of 2D array
+ * @height: height of 2D array
+ * Return: pointer to 2D array or NULL if failure
  */
-int **alloc_grip(int width, int height)
+int **alloc_grid(int width, int height)
 {
-	int **mee;
-	int x, y;
+	int **arr;
+	int i, j;
 
-	if (width <= 0 || height <= 0)
+	if (width < 1 || height < 1)
 		return (NULL);
-
-	mee = malloc(sizeof(int *) * height);
-
-	if (mee == NULL)
+	arr = malloc(sizeof(int *) * height);
+	if (arr == NULL)
 		return (NULL);
-
-	for (x = 0; x < height; x++)
+	for (i = 0; i < height; i++)
 	{
-		mee[x] = malloc(sizeof(int) * width);
-
-		if (mee[x] == NULL)
+		arr[i] = malloc(sizeof(int) * width);
+		if (arr[i] == NULL)
 		{
-			for (; x >= 0; x--)
-				free(mee[x]);
-
-			free(mee);
+			for (--i; i >= 0; i--)
+				free(arr[i]);
+			free(arr);
 			return (NULL);
 		}
 	}
-	for (x = 0; x < height; x++)
-	{
-		for (y = 0; y < width; y++)
-			mee[x][y] = 0;
-	}
-	return (mee);
+	for (i = 0; i < height; i++)
+		for (j = 0; j < width; j++)
+			arr[i][j] = 0;
+	return (arr);
 }
